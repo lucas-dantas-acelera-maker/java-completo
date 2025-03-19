@@ -1,10 +1,9 @@
 package s03fundamentos;
 
-import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Main {
+public class ModuleChallenge {
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in).useLocale(Locale.US)) {
             System.out.println("==================JAVA CALCULATOR START==================");
