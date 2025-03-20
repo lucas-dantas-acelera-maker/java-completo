@@ -146,6 +146,42 @@ public class MenuService {
         System.out.printf("%,.2f base and %,.2f height triangle area: %,.2f%n%n", base, height, area);
     }
 
+    /**
+     * <p>
+     *  Solves a quadratic equation
+     * </p>
+     * Prompts the user for a, b and c values,
+     * calculates the discriminant, applies the bhaskara's formula
+     * and then prints the result
+     */
+    public void solveQuadraticEquation() {
+        double a = getValidDoubleInput("A value: ");
+        double b = getValidDoubleInput("B value: ");
+        double c = getValidDoubleInput("C value: ");
+
+        // Get discriminant
+        double discriminant = Math.pow(b, 2) - (4 * a * c);
+
+        // Bhaskara formula
+        double x1 = (Math.pow(b, 2) + Math.sqrt(discriminant)) / 2 * a;
+        double x2 = (Math.pow(b, 2) - Math.sqrt(discriminant)) / 2 * a;
+
+        System.out.printf("Quadratic equation: %n");
+        System.out.printf("%,.2f + %,.2f + %,.2f = 0%n", a, b, c);
+        System.out.printf("Discriminant: %,.2f%n", discriminant);
+        System.out.printf("x1 = %,.2f%n", x1);
+        System.out.printf("x2 = %,.2f%n%n", x2);
+    }
+
+    private double getValidDoubleInput(String input) {
+        System.out.print(input);
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print(input);
+            sc.next();
+        }
+        return sc.nextDouble();
+    }
 
     public void showInvalidInputMessage() {
         System.out.println("Invalid input. Please try again.");

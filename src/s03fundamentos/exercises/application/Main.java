@@ -45,11 +45,16 @@ public class Main {
                     5, "Calculate a triangle's area", menuService::calculateTriangleArea
             );
 
+            MenuOption op6 = new MenuOption(
+                    6, "Calculate quadratic equation", menuService::solveQuadraticEquation
+            );
+
             menu.addMenuOption(op1);
             menu.addMenuOption(op2);
             menu.addMenuOption(op3);
             menu.addMenuOption(op4);
             menu.addMenuOption(op5);
+            menu.addMenuOption(op6);
 
             menuController.startMenu();
         }
