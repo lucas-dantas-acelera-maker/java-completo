@@ -37,9 +37,14 @@ public class Main {
                     3, "Calculate BMI", menuService::calculateBMI
             );
 
+            MenuOption op4 = new MenuOption(
+                    4, "Calculate Square and Cube values", menuService::calculateSquareAndCube
+            );
+
             menu.addMenuOption(op1);
             menu.addMenuOption(op2);
             menu.addMenuOption(op3);
+            menu.addMenuOption(op4);
 
             menuController.startMenu();
         }

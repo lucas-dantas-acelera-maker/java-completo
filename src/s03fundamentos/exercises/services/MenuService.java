@@ -93,6 +93,30 @@ public class MenuService {
                 height, weight, bmi);
     }
 
+    /**
+     * <p>
+     *  Calculates the square and cube of a single value
+     * </p>
+     * Prompts the user for a value, then calculates and
+     * displays the square and cube results
+     */
+    public void calculateSquareAndCube() {
+        System.out.print("Type a value: ");
+
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Type a value: ");
+            sc.next();
+        }
+
+        double value = sc.nextDouble();
+        double square = Math.pow(value, 2);
+        double cube = Math.pow(value, 3);
+
+        System.out.printf("%,.2f² = %,.2f%n", value, square);
+        System.out.printf("%,.2f³ = %,.2f%n%n", value, cube);
+    }
+
 
     public void showInvalidInputMessage() {
         System.out.println("Invalid input. Please try again.");
