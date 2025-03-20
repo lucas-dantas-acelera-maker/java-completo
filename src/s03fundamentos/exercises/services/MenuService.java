@@ -114,11 +114,17 @@ public class MenuService {
         double x1 = (Math.pow(b, 2) + Math.sqrt(discriminant)) / 2 * a;
         double x2 = (Math.pow(b, 2) - Math.sqrt(discriminant)) / 2 * a;
 
-        System.out.printf("Quadratic equation: %n");
-        System.out.printf("%,.2f + %,.2f + %,.2f = 0%n", a, b, c);
-        System.out.printf("Discriminant: %,.2f%n", discriminant);
-        System.out.printf("x1 = %,.2f%n", x1);
-        System.out.printf("x2 = %,.2f%n%n", x2);
+        if (discriminant >= 0) {
+            System.out.printf("Quadratic equation: %n");
+            System.out.printf("%,.2f + %,.2f + %,.2f = 0%n", a, b, c);
+            System.out.printf("Discriminant: %,.2f%n", discriminant);
+            System.out.printf("x1 = %,.2f%n", x1);
+            System.out.printf("x2 = %,.2f%n%n", x2);
+        } else {
+            System.out.printf("Discriminant: %,.2f%n", discriminant);
+            System.out.println("Negative discriminant quadratic equations have no real x's values\n");
+        }
+
     }
 
     private double getValidDoubleInput(String input) {
