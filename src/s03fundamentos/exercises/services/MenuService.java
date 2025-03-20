@@ -117,6 +117,35 @@ public class MenuService {
         System.out.printf("%,.2f³ = %,.2f%n%n", value, cube);
     }
 
+    /**
+     * <p>
+     *  Calculates the area of a triangle
+     * </p>
+     * Prompts the user for base and height values,
+     * then calculates and displays the triangle's area
+     */
+    public void calculateTriangleArea() {
+        System.out.print("Triangle base: ");
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Triangle base: ");
+            sc.next();
+        }
+        double base = sc.nextDouble();
+
+        System.out.print("Triangle height: ");
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Triangle height: ");
+            sc.next();
+        }
+        double height = sc.nextDouble();
+
+        double area = (base * height) / 2;
+
+        System.out.printf("%,.2f base and %,.2f height triangle area: %,.2f%n%n", base, height, area);
+    }
+
 
     public void showInvalidInputMessage() {
         System.out.println("Invalid input. Please try again.");

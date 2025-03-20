@@ -41,10 +41,15 @@ public class Main {
                     4, "Calculate Square and Cube values", menuService::calculateSquareAndCube
             );
 
+            MenuOption op5 = new MenuOption(
+                    5, "Calculate a triangle's area", menuService::calculateTriangleArea
+            );
+
             menu.addMenuOption(op1);
             menu.addMenuOption(op2);
             menu.addMenuOption(op3);
             menu.addMenuOption(op4);
+            menu.addMenuOption(op5);
 
             menuController.startMenu();
         }
