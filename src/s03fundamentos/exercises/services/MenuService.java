@@ -42,6 +42,28 @@ public class MenuService {
         System.out.printf("%,.2f Fº = %,.2f Cº%n%n", fahrenheit, celsius);
     }
 
+    /**<p>
+     * Converts a temperature from Celsius to Fahrenheit.
+     * </p>
+     * Prompts the user for a temperature in Celsius,
+     * converts it to Fahrenheit, and displays the result.
+     */
+    public void convertCelsiusToFahrenheit() {
+        System.out.print("Temperature in Celsius: ");
+
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Temperature in Celsius: ");
+            sc.next();
+        }
+
+        double celsius = sc.nextDouble();
+        sc.nextLine();
+        double fahrenheit = (celsius * 9/5) + 32;
+        System.out.printf("%,.2f Cº = %,.2f Fº%n%n", celsius, fahrenheit);
+
+    }
+
     public void showInvalidInputMessage() {
         System.out.println("Invalid input. Please try again.");
     }

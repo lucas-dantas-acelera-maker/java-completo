@@ -29,7 +29,12 @@ public class Main {
                     1, "Convert Fahrenheit to Celsius", menuService::convertFahrenheitToCelsius
             );
 
+            MenuOption op2 = new MenuOption(
+                    2, "Convert Celsius to Fahrenheit",menuService::convertCelsiusToFahrenheit
+            );
+
             menu.addMenuOption(op1);
+            menu.addMenuOption(op2);
 
             menuController.startMenu();
         }
