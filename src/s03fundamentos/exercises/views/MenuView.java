@@ -26,7 +26,7 @@ public class MenuView {
         for (MenuOption op : options) {
             System.out.println(op);
         }
-        System.out.println("Type the desired option: ");
+        System.out.print("Type the desired option: ");
     }
 
     /**
