@@ -28,15 +28,7 @@ public class MenuService {
      * converts it to Celsius, and displays the result.
      */
     public void convertFahrenheitToCelsius() {
-        System.out.print("Temperature in Fahrenheit: ");
-
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Temperature in Fahrenheit: ");
-            sc.next();
-        }
-
-        double fahrenheit = sc.nextDouble();
+        double fahrenheit = getValidDoubleInput("Temperature in Fahrenheit: ");
         sc.nextLine();
         double celsius = (fahrenheit - 32) * 5 / 9;
         System.out.printf("%,.2f Fº = %,.2f Cº%n%n", fahrenheit, celsius);
@@ -49,15 +41,7 @@ public class MenuService {
      * converts it to Fahrenheit, and displays the result.
      */
     public void convertCelsiusToFahrenheit() {
-        System.out.print("Temperature in Celsius: ");
-
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Temperature in Celsius: ");
-            sc.next();
-        }
-
-        double celsius = sc.nextDouble();
+        double celsius = getValidDoubleInput("Temperature in Celsius: ");
         sc.nextLine();
         double fahrenheit = (celsius * 9/5) + 32;
         System.out.printf("%,.2f Cº = %,.2f Fº%n%n", celsius, fahrenheit);
@@ -71,22 +55,8 @@ public class MenuService {
      * then calculates the BMI and displays the result
      */
     public void calculateBMI() {
-        System.out.print("Height in meters: ");
-
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Height in meters: ");
-            sc.next();
-        }
-        double height = sc.nextDouble();
-
-        System.out.print("Weight in kilograms: ");
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Weight in kilograms: ");
-            sc.next();
-        }
-        double weight = sc.nextDouble();
+        double height = getValidDoubleInput("Height in meters: ");
+        double weight = getValidDoubleInput("Weight in kilograms: ");
 
         double bmi = weight / Math.pow(height, 2);
         System.out.printf("A %.2f m tall person, with %.2f kg weight has a BMI of %.2f%n\n",
@@ -101,15 +71,7 @@ public class MenuService {
      * displays the square and cube results
      */
     public void calculateSquareAndCube() {
-        System.out.print("Type a value: ");
-
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Type a value: ");
-            sc.next();
-        }
-
-        double value = sc.nextDouble();
+        double value = getValidDoubleInput("Type a value: ");
         double square = Math.pow(value, 2);
         double cube = Math.pow(value, 3);
 
@@ -125,22 +87,8 @@ public class MenuService {
      * then calculates and displays the triangle's area
      */
     public void calculateTriangleArea() {
-        System.out.print("Triangle base: ");
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Triangle base: ");
-            sc.next();
-        }
-        double base = sc.nextDouble();
-
-        System.out.print("Triangle height: ");
-        while (!sc.hasNextDouble()) {
-            showInvalidInputMessage();
-            System.out.print("Triangle height: ");
-            sc.next();
-        }
-        double height = sc.nextDouble();
-
+        double base = getValidDoubleInput("Triangle's base: ");
+        double height = getValidDoubleInput("Triangle's height: ");
         double area = (base * height) / 2;
 
         System.out.printf("%,.2f base and %,.2f height triangle area: %,.2f%n%n", base, height, area);
