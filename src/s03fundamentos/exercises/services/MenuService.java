@@ -61,8 +61,38 @@ public class MenuService {
         sc.nextLine();
         double fahrenheit = (celsius * 9/5) + 32;
         System.out.printf("%,.2f Cº = %,.2f Fº%n%n", celsius, fahrenheit);
-
     }
+
+    /**
+     * <p>
+     *  Calculates the BMI (Body Mass Index) of a person
+     * </p>
+     * Prompts the user for the weight and height values,
+     * then calculates the BMI and displays the result
+     */
+    public void calculateBMI() {
+        System.out.print("Height in meters: ");
+
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Height in meters: ");
+            sc.next();
+        }
+        double height = sc.nextDouble();
+
+        System.out.print("Weight in kilograms: ");
+        while (!sc.hasNextDouble()) {
+            showInvalidInputMessage();
+            System.out.print("Weight in kilograms: ");
+            sc.next();
+        }
+        double weight = sc.nextDouble();
+
+        double bmi = weight / Math.pow(height, 2);
+        System.out.printf("A %.2f m tall person, with %.2f kg weight has a BMI of %.2f%n\n",
+                height, weight, bmi);
+    }
+
 
     public void showInvalidInputMessage() {
         System.out.println("Invalid input. Please try again.");

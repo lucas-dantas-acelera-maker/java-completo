@@ -30,11 +30,16 @@ public class Main {
             );
 
             MenuOption op2 = new MenuOption(
-                    2, "Convert Celsius to Fahrenheit",menuService::convertCelsiusToFahrenheit
+                    2, "Convert Celsius to Fahrenheit", menuService::convertCelsiusToFahrenheit
+            );
+
+            MenuOption op3 = new MenuOption(
+                    3, "Calculate BMI", menuService::calculateBMI
             );
 
             menu.addMenuOption(op1);
             menu.addMenuOption(op2);
+            menu.addMenuOption(op3);
 
             menuController.startMenu();
         }
